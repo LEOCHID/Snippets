@@ -7,7 +7,7 @@ install requirements:
 run project:
 `python manage.py runserver`
 
-применить миграции
+применить миграции:
 `python manage.py migrate`
 
 run django-extensions console:

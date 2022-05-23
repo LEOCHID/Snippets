@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static }
 <html lang="ru" class="h-100">
 
 <head>
@@ -9,7 +10,7 @@
     <title>PythonBin</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- Custom styles for this template -->
     <style>
         main > .container {
