@@ -1,8 +1,14 @@
-install requirements: 
+1. Создать venv:
+`python3 -m venv <venv_name>`
+
+install requirements:
 `pip install -r requirements.txt`
 
 run project:
 `python manage.py runserver`
 
-run django-extensions console: 
+применить миграции
+`python manage.py migrate`
+
+run django-extensions console:
 `python manage.py shell_plus --ipython`
