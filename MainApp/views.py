@@ -9,15 +9,20 @@ def index_page(request):
 
 
 def add_snippet_page(request):
- if request.method == "GET":
-         form = SnippetForm()
-         context = {'pagename': 'Добавление нового сниппета', "form": form}
-         return render(request, 'pages/add_snippet.html', context)
-     if request.method == "POST": # информацию от формы
-         form = SnippetForm(request.POST)
-         if form.is_valid():
-             form.save()
-             return redirect("snippets-list")
+
+    if request.method == "GET":
+
+      form = SnippetForm()
+      context = {'pagename': 'Добавление нового сниппета', "form": form}
+    return render(request, 'pages/add_snippet.html', context)
+
+if request.method == "POST":
+
+      form = SnippetForm(request.POST)
+
+if    form.is_valid():
+      form.save()
+    return redirect("snippets-list")
 
 
 
@@ -29,6 +34,6 @@ def snippets_page(request):
     return render(request, 'pages/view_snippets.html', context)
 
 
-    def snippets1(request):
-        context = {'pagename': 'Hello World'}
-        return render(request, 'MainApp/snippets.html', context)
+def snippets1(request):
+    context = {'pagename': 'Hello World'}
+    return render(request, 'MainApp/snippets.html', context)
