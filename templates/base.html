@@ -46,15 +46,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="form-inline"><a class="btn btn-outline-secondary" href="{% url 'snippet_add' %}">Добавить сниппет</a></li>
-                    <li class="form-inline"><a class="btn btn-outline-info" href="{% 'snippets_list' %}">Посмотреть
+                    <li class="form-inline"><a class="btn btn-outline-secondary" href="{% url 'snippets_add' %}">Добавить сниппет</a></li>
+                    <li class="form-inline"><a class="btn btn-outline-info" href="{% url 'snippets_list' %}">Посмотреть
                         сниппеты</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
-
+{% include 'inc/inc-header.html' %}
 <!-- Begin page content -->
 <main role="main" class="mt-3 flex-shrink-0">
     {% block main %}
@@ -67,7 +67,7 @@
         Шаблон заготовка для урока</span>
     </div>
 </footer>
-
+{% include 'inc/inc-footer.html' %}
 <!-- Optional JavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
