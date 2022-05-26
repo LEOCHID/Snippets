@@ -31,6 +31,14 @@
              </div>
          </fieldset>
      </div>
+     <div class="row"
+     <div class="col"
+       <form action="{%url 'comment-add'%}" method="post">{% csrf_token %}
+       {{ form.text }}<br>
+       <input name="snippet_id" type="hidden" value="{{ snippet.id }}">
+       <button type="submit">Коментировать</button>
+       </form>
+     </div>
  </div>
 
- {% endblock %} 
+ {% endblock %}

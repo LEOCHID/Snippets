@@ -1,5 +1,5 @@
 from django.forms import ModelForm, TextInput, Textarea, CharField, PasswordInput, ValidationError
-from MainApp.models import Snippet
+from MainApp.models import Snippet, Comment
 from django.contrib.auth.models import User
 
 
@@ -11,6 +11,11 @@ class SnippetForm(ModelForm):
         widgets = {
             'name': TextInput(attrs={"class": "form-control form-control-lg", 'placeholder': 'Название виджета'})
         }
+
+class CommentForm(ModelForm):
+    class Meta:
+         model = Comment
+         fields = ['text']
 
 
 class UserRegistrationForm(ModelForm):
