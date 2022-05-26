@@ -18,7 +18,9 @@ def add_snippet_page(request):
     if request.method == "POST":  # информацию от формы
         form = SnippetForm(request.POST)
         if form.is_valid():
-            form.save()
+            snippet = form.save(commit=False)
+            snippet.user = request.user
+            snippet.save()
             return redirect("snippets-list")
 
 
@@ -50,7 +52,7 @@ def login_page(request):
         else:
             # Return error message
             pass
-    return redirect('home')
+    return redirect(request.META.get('HTTP_REFERER', '/'))
 
 
 def logout(request):
@@ -68,3 +70,5 @@ def register(request):
         if form.is_valid():
             form.save()
             return redirect("home")
+        context = {'pagename': 'Регистрация пользователя', "form": form}
+        return render(request, 'pages/registration.html', context)
