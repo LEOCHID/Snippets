@@ -19,6 +19,7 @@ class Snippet(models.Model):
     def __str__(self):
         return f"Snippet: {self.name} Author:{self.user}"
 
+
 class Comment(models.Model):
     text = models.TextField(max_length=1000)
     creation_date = models.DateTimeField(auto_now_add=True)
